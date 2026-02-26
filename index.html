@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memryls — A Distant Call to the Moon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Josefin+Sans:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-logo">Memryls</div>
+        <ul class="nav-links">
+            <li><a href="#home">Accueil</a></li>
+            <li><a href="#map">Carte</a></li>
+            <li><a href="#story">Histoire</a></li>
+            <li><a href="#features">Piliers</a></li>
+            <li><a href="#download" class="nav-cta">Télécharger</a></li>
+            <li><a href="connexion.html" class="nav-auth">Connexion</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-circle"></div>
+        <div class="hero-circle"></div>
+        <div class="hero-circle"></div>
+        <div class="hero-stars" id="hero-stars"></div>
+
+        <div class="hero-content">
+            <div class="hero-eyebrow">Infiltration · Conception · Voyage</div>
+            <h1 class="hero-title">Memryls</h1>
+            <p class="hero-subtitle">A Distant Call to the Moon</p>
+            <p class="hero-tagline">Partez à la conquête de l'orbite terrestre.<br>Infiltrez les systèmes. Retrouvez
+                votre père. Découvrez la vérité.</p>
+            <div class="hero-cta-group">
+                <a href="#download" class="btn btn-primary">⬇ Télécharger le launcher</a>
+                <a href="#map" class="btn btn-secondary">Explorer la carte</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="stripe-bar"></div>
+
+    <section class="section story-section" id="story">
+        <div class="section-inner">
+            <div class="section-label scroll-reveal">Chapitre I — Origines</div>
+            <h2 class="section-title scroll-reveal">Une quête à travers<br><em>les étoiles</em></h2>
+            <div class="story-grid">
+                <div class="story-text scroll-reveal-left">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt deleniti ipsum voluptatibus
+                        dolore odio nulla facilis alias maxime! Fugiat repellat dolorum dolore iusto incidunt.</p>
+                    <p><strong>Lorem ipsum dolor sit amet consectetur adipisicing elit.</strong>, Lorem ipsum dolor sit amet 
+                        consectetur, adipisicing elit. Velit provident accusamus quam sed esse inventore, vitae animi illum 
+                        repellat unde facilis?.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, voluptas? Explicabo, ullam consectetur. 
+                        Lorem ipsum dolor sit amet, consectetur adipisicing. <strong>Lorem ipsum dolor sit amet consectetur adipisicing 
+                            elit. Sed dolorum temporibus ad</strong>.</p>
+                    <a href="#features" class="btn btn-outline-dark" style="margin-top:1rem;">Découvrir les piliers</a>
+                </div>
+                <div class="story-visual scroll-reveal-right">
+                    <div class="story-frame">
+                        <div class="story-frame-corner tl"></div>
+                        <div class="story-frame-corner tr"></div>
+                        <div class="story-frame-corner bl"></div>
+                        <div class="story-frame-corner br"></div>
+                        <span class="story-frame-label">Artwork — Octave</span>
+                    </div>
+                    <div class="story-badge">
+                        <span>400</span>
+                        <span>ans après</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section map-section" id="map">
+        <div class="map-bg-circle" style="width:500px;height:500px;"></div>
+        <div class="map-bg-circle" style="width:800px;height:800px;"></div>
+        <div class="map-bg-circle" style="width:1100px;height:1100px;"></div>
+        <div class="section-inner">
+            <div class="section-label scroll-reveal">Carte Interactive</div>
+            <h2 class="section-title scroll-reveal" style="color:var(--cream);">L'orbite terrestre<br><em
+                    style="color:var(--gold);">vous attend</em></h2>
+            <p class="section-desc scroll-reveal">Explorez la carte 3D du jeu. Cliquez sur les planètes et colonies pour
+                découvrir les lieux de votre aventure.</p>
+
+            <div class="map-wrapper">
+                <div class="map-canvas-wrap scroll-reveal-scale">
+                    <canvas id="threejs-canvas"></canvas>
+                    <div class="map-corner tl"></div>
+                    <div class="map-corner tr"></div>
+                    <div class="map-corner bl"></div>
+                    <div class="map-corner br"></div>
+                    <div class="map-hint">✦ Cliquez sur un objet pour l'explorer · Glissez pour tourner</div>
+                    <div class="map-controls">
+                        <button class="map-btn" id="reset-cam">↺ Vue initiale</button>
+                        <button class="map-btn" id="toggle-rot">⏸ Pause</button>
+                    </div>
+                </div>
+
+                <div class="map-info-panel scroll-reveal-right">
+                    <div class="panel-header-bar">
+                        <h4>Journal de bord</h4>
+                        <div class="panel-dots">
+                            <div class="panel-dot"></div>
+                            <div class="panel-dot"></div>
+                            <div class="panel-dot"></div>
+                        </div>
+                    </div>
+                    <div class="panel-body" id="map-panel">
+                        <div class="panel-empty">
+                            <div class="panel-empty-icon">🌍</div>
+                            <p>Sélectionnez un objet céleste pour afficher ses informations et son rôle dans votre
+                                quête.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="stripe-bar"></div>
+
+    <section class="section features-section" id="features">
+        <div class="section-inner">
+            <div class="section-label scroll-reveal">Piliers de jeu</div>
+            <h2 class="section-title scroll-reveal">Trois façons de<br><em>jouer votre rôle</em></h2>
+            <div class="features-grid">
+                <div class="feature-card scroll-reveal">
+                    <span class="feature-card-num">01</span>
+                    <span class="feature-icon">🛡️</span>
+                    <h3 class="feature-title">Infiltration Système</h3>
+                    <p class="feature-desc">Pénétrez dans des donjons virtuels remplis d'énigmes et de combats
+                        tactiques. Furtivité, stratégie et programmes à la clé.</p>
+                    <span class="feature-tag">Tactique · Furtivité</span>
+                </div>
+                <div class="feature-card scroll-reveal">
+                    <span class="feature-card-num">02</span>
+                    <span class="feature-icon">📡</span>
+                    <h3 class="feature-title">Encyclopad & Personnalisation</h3>
+                    <p class="feature-desc">Améliorez votre ordinateur portable avec des programmes uniques. Gérez votre
+                        énergie et composez votre stratégie.</p>
+                    <span class="feature-tag">RPG · Crafting</span>
+                </div>
+                <div class="feature-card scroll-reveal">
+                    <span class="feature-card-num">03</span>
+                    <span class="feature-icon">🚀</span>
+                    <h3 class="feature-title">Voyage Spatial</h3>
+                    <p class="feature-desc">Explorez l'orbite terrestre, de la Terre à la Lune. Colonies, vaisseaux,
+                        stations — tout un monde à découvrir.</p>
+                    <span class="feature-tag">Exploration · Aventure</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section media-section" id="media">
+        <div class="section-inner">
+            <div class="section-label scroll-reveal">Galerie</div>
+            <h2 class="section-title scroll-reveal">L'univers visuel<br><em style="color:var(--gold);">de Memryls</em>
+            </h2>
+            <div class="media-grid">
+                <div class="media-item media-item-wide scroll-reveal"></div>
+                <div class="media-item scroll-reveal"></div>
+                <div class="media-item scroll-reveal"></div>
+                <div class="media-item scroll-reveal"></div>
+                <div class="media-item media-item-wide scroll-reveal"></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="stripe-bar"></div>
+
+    <section class="section requirements-section" id="requirements">
+        <div class="section-inner">
+            <div class="section-label scroll-reveal">Technique</div>
+            <h2 class="section-title scroll-reveal">Configuration<br><em>requise</em></h2>
+            <div class="req-grid">
+                <div class="req-box scroll-reveal-left">
+                    <div class="req-box-header">
+                        <h3>Minimale</h3>
+                        <span class="req-badge min">Min.</span>
+                    </div>
+                    <ul class="req-list">
+                        <li><span class="req-key">OS</span><span class="req-val">Windows 10 64-bit</span></li>
+                        <li><span class="req-key">CPU</span><span class="req-val">Core i5-6600K / Ryzen 5 1600</span>
+                        </li>
+                        <li><span class="req-key">RAM</span><span class="req-val">8 GB</span></li>
+                        <li><span class="req-key">GPU</span><span class="req-val">GTX 1060 / RX 580</span></li>
+                        <li><span class="req-key">DirectX</span><span class="req-val">Version 11</span></li>
+                        <li><span class="req-key">Stockage</span><span class="req-val">6 GB</span></li>
+                    </ul>
+                </div>
+                <div class="req-box scroll-reveal-right">
+                    <div class="req-box-header">
+                        <h3>Recommandée</h3>
+                        <span class="req-badge rec">Rec.</span>
+                    </div>
+                    <ul class="req-list">
+                        <li><span class="req-key">OS</span><span class="req-val">Windows 11 64-bit</span></li>
+                        <li><span class="req-key">CPU</span><span class="req-val">Core i7-9700K / Ryzen 7 3700X</span>
+                        </li>
+                        <li><span class="req-key">RAM</span><span class="req-val">16 GB</span></li>
+                        <li><span class="req-key">GPU</span><span class="req-val">RTX 3060 / RX 6700 XT</span></li>
+                        <li><span class="req-key">DirectX</span><span class="req-val">Version 12</span></li>
+                        <li><span class="req-key">Stockage</span><span class="req-val">10 GB SSD</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section cta-section" id="download">
+        <div class="cta-inner">
+            <div class="section-label scroll-reveal" style="justify-content:center;margin-bottom:1rem;">Rejoignez la
+                mission</div>
+            <h2 class="section-title scroll-reveal">Prêt à décoller<br><em style="color:var(--gold);">vers la Lune
+                    ?</em></h2>
+            <p class="cta-desc scroll-reveal">Inscrivez-vous à la newsletter pour recevoir les dernières nouvelles et un
+                accès anticipé au launcher.</p>
+            <form class="newsletter-form scroll-reveal-scale" id="nl-form">
+                <input type="email" class="newsletter-input" placeholder="votre@email.com" required>
+                <button type="submit" class="newsletter-submit">S'inscrire</button>
+            </form>
+            <div class="download-sep scroll-reveal">— ou téléchargez directement —</div>
+            <a href="#" class="btn btn-secondary scroll-reveal" style="border-color:var(--cream);color:var(--cream);">⬇
+                Télécharger le Launcher</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <h3>Memryls</h3>
+                <p>Un jeu d'aventure tactique qui vous plonge dans l'orbite terrestre 400 ans après la migration
+                    spatiale de l'humanité. Infiltrez, explorez, découvrez.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-btn">𝕏</a>
+                    <a href="#" class="social-btn">▶</a>
+                    <a href="#" class="social-btn">◆</a>
+                    <a href="#" class="social-btn">🎮</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Jeu</h4>
+                <ul>
+                    <li><a href="#features">Piliers de jeu</a></li>
+                    <li><a href="#map">Carte interactive</a></li>
+                    <li><a href="#media">Médias</a></li>
+                    <li><a href="#requirements">Configuration</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Bug Report</a></li>
+                    <li><a href="#">Forum</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Studio</h4>
+                <ul>
+                    <li><a href="#">À propos</a></li>
+                    <li><a href="#">Presse</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Carrières</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Memryls. Tous droits réservés.</p>
+            <ul class="footer-legal">
+                <li><a href="#">Mentions légales</a></li>
+                <li><a href="#">Confidentialité</a></li>
+                <li><a href="#">CGU</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="./scripts/script.js"></script>
+</body>
+
+</html>
